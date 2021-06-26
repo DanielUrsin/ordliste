@@ -3617,8 +3617,8 @@ historisk
 historisk-biografisk
 historisk-filosofisk
 historisk-politisk
-HIV-positiv
 hiv-positiv
+HIV-positiv
 hivpositiv
 hjelmpryda
 hjelpelaus
@@ -6766,8 +6766,8 @@ offisiøs
 offshoreretta
 ofselig
 ohmsk
-OK
 ok
+OK
 okerfarga
 okergul
 okklusiv
@@ -10253,10 +10253,10 @@ tuslen
 tussmørk
 tusten
 tuvalsk
-TV-fri
 tv-fri
-tv-messig
+TV-fri
 TV-messig
+tv-messig
 TV-vennlig
 tv-vennlig
 tvangfri

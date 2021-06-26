@@ -1,5 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-import os, sys, time
+import os, sys, time, re
 
 
 
@@ -80,22 +80,27 @@ def hent_adjektiver(alder):
         raise ValueError("Ingen ord funnet")
 
     rand1 = int.from_bytes(os.urandom(4), byteorder='big')%len(ordliste)
-    time.sleep(0.5)
     rand2 = int.from_bytes(os.urandom(4), byteorder='big')%len(ordliste)
 
     return ordliste[rand1], ordliste[rand2]
 
 
 def main():
-
-    if "-p" in sys.argv:
-        populate()
+    i = 1
+    for item in sys.argv:
+        if "-p" == item:
+            populate()
+        if item.startswith("c="):
+            t = item[2:]
+            if t.isnumeric():
+                i = int(t,10)
     try:
         alder = sys.argv[1]
         if alder.isnumeric():
             alder = tall_til_tekst(alder)
-        adj1, adj2 = hent_adjektiver(alder)
-        print(f"\n\t{adj1}, {adj2} og {alder}\n")
+        for k in range(i):
+            adj1, adj2 = hent_adjektiver(alder)
+            print(f"\n\t{adj1}, {adj2} og {alder}\n")
     except:
         print("\nBruksanvisning:")
         print("\nSett inn alder mellom 1 og 99, som tall eller bokstaver.")
