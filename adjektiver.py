@@ -10,17 +10,19 @@ def tall_til_tekst(tall):
     '''
 
     nullTilTjue = {"0":"", "1":"en", "2":"to", "3":"tre", "4":"fire", "5":"fem",
-                   "6":"seks", "7":"syv", "8":"åtte", "9":"ni", "10":"ti",
+                   "6":"seks", "7":"syv", "8":"ï¿½tte", "9":"ni", "10":"ti",
                    "11":"elleve", "12":"tolv", "13":"tretten", "14":"fjorten",
-                   "15":"femten", "16":"seksten", "17":"søtten", "18":"atten",
+                   "15":"femten", "16":"seksten", "17":"sï¿½tten", "18":"atten",
                    "19":"nitten"}
-    tiere = {"2":"tjue", "3":"tretti", "4":"førti", "5":"femti",
-             "6":"seksti", "7":"søtti", "8":"åtti", "9":"nitti"}
+    tiere = {"2":"tjue", "3":"tretti", "4":"fï¿½rti", "5":"femti",
+             "6":"seksti", "7":"sï¿½tti", "8":"ï¿½tti", "9":"nitti"}
 
     if 0 <= int(tall, 10) < 20:
         tekst = nullTilTjue[tall]
     elif 20 <= int(tall, 10) < 100:
         tekst = tiere[tall[0]]+nullTilTjue[tall[1]]
+    elif int(tall, 10) == 100:
+        tekst = "hundre"
     else:
         raise ValueError
 
@@ -90,12 +92,14 @@ def main():
     for item in sys.argv:
         if "-p" == item:
             populate()
-        if item.startswith("c="):
+        elif item.startswith("c="):
             t = item[2:]
             if t.isnumeric():
                 i = int(t,10)
+        else:
+            alder = item
+    print(alder)
     try:
-        alder = sys.argv[1]
         if alder.isnumeric():
             alder = tall_til_tekst(alder)
         for k in range(i):
@@ -103,9 +107,10 @@ def main():
             print(f"\n\t{adj1}, {adj2} og {alder}\n")
     except:
         print("\nBruksanvisning:")
-        print("\nSett inn alder mellom 1 og 99, som tall eller bokstaver.")
-        print("Legg til \"-p\" for å sette opp adjektivlisten.")
-        print("\nEksempel:\t$ python3 nitti -p\n")
+        print("\nSett inn alder fra 1 til 100, som tall eller bokstaver.")
+        print("Legg til \"-p\" for ï¿½ sette opp adjektivlisten.")
+        print("Legg til \"c=x\" for ï¿½ kjï¿½re programmet x ganger.")
+        print("\nEksempel:\t$ python3 nitti -p c=10\n")
 
 
 

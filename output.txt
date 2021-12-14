@@ -3617,8 +3617,8 @@ historisk
 historisk-biografisk
 historisk-filosofisk
 historisk-politisk
-hiv-positiv
 HIV-positiv
+hiv-positiv
 hivpositiv
 hjelmpryda
 hjelpelaus
@@ -10253,8 +10253,8 @@ tuslen
 tussmørk
 tusten
 tuvalsk
-tv-fri
 TV-fri
+tv-fri
 TV-messig
 tv-messig
 TV-vennlig
