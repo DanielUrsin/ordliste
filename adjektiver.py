@@ -96,9 +96,8 @@ def main():
             t = item[2:]
             if t.isnumeric():
                 i = int(t,10)
-        else:
+        elif item != "adjektiver.py":
             alder = item
-    print(alder)
     try:
         if alder.isnumeric():
             alder = tall_til_tekst(alder)
@@ -108,8 +107,8 @@ def main():
     except:
         print("\nBruksanvisning:")
         print("\nSett inn alder fra 1 til 100, som tall eller bokstaver.")
-        print("Legg til \"-p\" for � sette opp adjektivlisten.")
-        print("Legg til \"c=x\" for � kj�re programmet x ganger.")
+        print("Legg til \"-p\" for å sette opp adjektivlisten.")
+        print("Legg til \"c=x\" for å kjøre programmet x ganger.")
         print("\nEksempel:\t$ python3 nitti -p c=10\n")
 
 
